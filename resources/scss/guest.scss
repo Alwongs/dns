@@ -1,6 +1,5 @@
 .guest-layout {
-    padding-top: 25vh;
-    background-color: rgba($commonBg, 0.8);
+    background-color: rgba($commonBg, 0);
     height: 100vh;
     &__modal {
         background-color: $white;

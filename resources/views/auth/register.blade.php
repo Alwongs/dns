@@ -9,7 +9,7 @@
                 <label for="name">имя</label>
                 <div class="form__input-block">  
                     <x-text-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                    <x-input-error :messages="$errors->get('name')"  />
+                    <x-input-error :messages="$errors->get('name')" />
                 </div>
 
             </div>
@@ -19,7 +19,7 @@
                 <label for="email">email</label>
                 <div class="form__input-block">                
                     <x-text-input id="email" class="" type="email" name="email" :value="old('email')" required autocomplete="username" />
-                    <x-input-error :messages="$errors->get('email')" class="" />
+                    <x-input-error :messages="$errors->get('email')" />
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                 <label for="password">пароль</label>
                 <div class="form__input-block">  
                     <x-text-input id="password" class="" type="password" name="password" required autocomplete="new-password" />
-                    <x-input-error :messages="$errors->get('password')" class="" />
+                    <x-input-error :messages="$errors->get('password')" />
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
                 <label for="password_confirmation">подтвердите пароль</label>
                 <div class="form__input-block"> 
                     <x-text-input id="password_confirmation" class="" type="password" name="password_confirmation" required autocomplete="new-password" />
-                    <x-input-error :messages="$errors->get('password_confirmation')" class="" />
+                    <x-input-error :messages="$errors->get('password_confirmation')" />
                 </div>
             </div>
 

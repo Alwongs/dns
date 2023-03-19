@@ -3,20 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', [MainController::class, 'index'])->name('home');
 
 
 Route::get('/dashboard', function () {
@@ -31,6 +19,10 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+Route::get('/orders', [OrderController::class, 'index'])->middleware(['auth', 'verified'])->name('orders');
+
+
+Route::get('/', [MainController::class, 'index'])->name('welcome');
 Route::get('/categories', [MainController::class, 'categories'])->name('categories');
 Route::get('/products', [MainController::class, 'products'])->name('products');
 Route::get('/basket', [BasketController::class, 'basket'])->name('basket');
@@ -38,10 +30,6 @@ Route::get('/basket/place', [BasketController::class, 'basketPlace'])->name('bas
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basket-add');
 Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basket-remove');
 Route::post('/basket/place', [BasketController::class, 'basketConfirm'])->name('basket-confirm');
-
-
-
-
 
 
 Route::get('/{category}', [MainController::class, 'category'])->name('category');

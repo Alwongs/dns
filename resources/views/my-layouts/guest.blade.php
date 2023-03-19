@@ -15,9 +15,15 @@
         @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
     </head>
     <body>
+        @include('my-components.admin-nav-panel')    
+
         <div class="guest-layout">
-            <div class="guest-layout__modal">
-                {{ $slot }}
+            <div class="container">
+                <div class="app-page"> 
+
+                    {{ $slot }}
+
+                </div>
             </div>
         </div>
     </body>
