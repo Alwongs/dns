@@ -3,7 +3,7 @@
 }
 .app-btn {
     border: 1px solid rgba($commonText, 0.5);
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 6px 12px;
     font-size: 15px;
     color: $white;
@@ -17,6 +17,9 @@
 }
 .btn-green {
     background-color: $greenBg;
+}
+.btn-warn {
+    background-color: $warnBg;
 }
 .btn-red {
     background-color: $redBg;

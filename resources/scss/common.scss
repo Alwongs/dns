@@ -12,19 +12,7 @@
         border: 2px solid darken(#ffe8cf, 10);
     }
 }
-.app-page {
-    width: 1000px;
-    margin: 0 auto;
-    &__title {
-        text-align: center; 
-        padding: 0;  
-        margin-bottom: 32px;
-    }
-    &__description {
-        text-align: center;   
-        margin-bottom: 16px;
-    }
-}
+
 
 .flex-end {
     justify-content: flex-end;

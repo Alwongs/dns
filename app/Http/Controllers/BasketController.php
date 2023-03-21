@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
@@ -17,6 +18,7 @@ class BasketController extends Controller
         }
         return view('shop.basket.index', compact('order'));
     }
+
     public function basketPlace() {
         $orderId = session('orderId');
         if (is_null($orderId)) {
@@ -25,8 +27,6 @@ class BasketController extends Controller
         $order = Order::find($orderId);
         return view('shop.basket.order', compact('order'));
     }
-
-
 
     public function basketConfirm(Request $request) {
 
@@ -47,10 +47,6 @@ class BasketController extends Controller
         return redirect()->route('products');
     }
 
-
-
-
-
     public function basketAdd($productId) {
         $orderId = session('orderId') ? session('orderId') : null;
         if (is_null($orderId)) {
@@ -67,6 +63,11 @@ class BasketController extends Controller
             $pivotRow->update();
         } else {
             $order->products()->attach($productId);
+        }
+
+        if (Auth::check()) {
+            $order->user_id = Auth::id();
+            $order->save();
         }
 
         $product = Product::find($productId);

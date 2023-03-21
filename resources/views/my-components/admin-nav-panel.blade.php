@@ -1,8 +1,8 @@
 <nav class="nav-admin-panel">
     <ul class="nav-admin-panel__left">
         <li> <a href="{{ route('welcome') }}"> DNS-shop </a> </li>
-        <li> <a href="{{ route('categories') }}"> Категории </a> </li>
-        <li> <a href="{{ route('products') }}"> Все товары </a> </li>
+        <li> <a href="{{ route('category.index') }}"> Категории </a> </li>
+        <li> <a href="{{ route('product.index') }}"> Все товары </a> </li>
         <li> <a href="{{ route('basket') }}"> Корзина </a> </li>
     </ul>
 

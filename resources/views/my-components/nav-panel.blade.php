@@ -10,7 +10,7 @@
         <div class="nav-panel__right">
             @auth
                 <form method="POST" action="{{ route('logout') }}">
-                    <a href="{{ url('/orders') }}">Административная панель</a>                
+                    <a href="{{ route('orders') }}">Административная панель</a>                
                     @csrf
                     <a :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Выйти</a>
                 </form>                       

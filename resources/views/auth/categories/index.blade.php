@@ -3,31 +3,33 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <h1 class="app-page__title">
-        Заказы
+        Категории
     </h1>
 
     <table class="app-table mb-8">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Имя</th>
-                <th>Телефон</th>
-                <th>Когда отправлен</th>
-                <th>Сумма</th>
+                <th>Код</th>
+                <th>Название</th>
                 <th>Действия</th>
             </tr>
         </thead>
         <tbody>
 
-            @if($orders)
-                @foreach($orders as $order)
-                    @include('my-components.admin-order-item')
+            @if($categories)
+                @foreach($categories as $category)
+                    @include('my-components.admin-category-item')
                 @endforeach
             @else
                 <tr class="app-table__item" style="text-align:center;">
-                    <td class="app-table__name" colspan="4">Заказов нет </td>
+                    <td class="app-table__name" colspan="4">Категорий нет </td>
                 </tr>                            
             @endif          
         </tbody>
     </table>
+
+    <div class="btn-group">
+        <a href="{{ route('category.create') }}" class="app-btn btn-green">Добавить категорию</a>
+    </div>    
 </x-guest-layout>

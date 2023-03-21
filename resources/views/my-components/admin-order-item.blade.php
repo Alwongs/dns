@@ -1,11 +1,11 @@
-<tr class="orders-table__item">
+<tr class="app-table__item">
 
-    <td class="orders-table__id">{{ $order->id }}</td>
-    <td class="orders-table__name">{{ $order->name}}</td>
-    <td class="orders-table__phone">{{ $order->phone }}</td>
-    <td class="orders-table__date">{{ $order->created_at->format('H:i d.m.Y') }}</td>
-    <td class="orders-table__price">{{ $order->getFullPrice() }}</td>
-    <td class="orders-table__actions">
+    <td class="app-table__id">{{ $order->id }}</td>
+    <td class="app-table__name">{{ $order->name}}</td>
+    <td class="app-table__phone">{{ $order->phone }}</td>
+    <td class="app-table__date">{{ $order->created_at->format('H:i d.m.Y') }}</td>
+    <td class="app-table__price">{{ $order->getFullPrice() }}</td>
+    <td class="app-table__actions">
         <button class="app-btn btn-green">Открыть</button>    
     </td>
 

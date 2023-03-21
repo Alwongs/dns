@@ -1,3 +1,11 @@
+/* ---- screen sizes ---- */
+$desktop-max: 1439px;
+$desktop-min: 1024px;
+$tablet-max: 1023px;
+$tablet-min: 768px;
+$mobile-max: 767px;
+
+/* ---- colors ---- */
 $commonBg: #4d7489;
 $commonText: rgb(39, 71, 119);
 
@@ -7,5 +15,9 @@ $lightGrey: lightGrey;
 $grey: grey;
 
 $redBg: #e23737;
+$warnBg: #e28f37;
 $greenBg: #2d956d;
 $blueBg: #0070d3;
+
+/* ---- radius ---- */
+$formInputRadius: 3px;

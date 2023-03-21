@@ -1,14 +1,14 @@
-<tr class="basket-table__item">
+<tr class="app-table__item">
 
-    <td class="basket-table__name">
+    <td class="app-table__name">
         <a href="{{ route('product', [$product->category->code, $product->code]) }}">
             <img height="38px" src="{{ Vite::asset('resources/images/cap1.jpg') }}">
             {{ $product->name }}
         </a>
     </td>
 
-    <td class="basket-table__actions">
-        <div class="basket-table__btn-group btn-group">
+    <td class="app-table__actions">
+        <div class="app-table__btn-group btn-group">
             <span>{{ $product->pivot->count }}</span>
             <form action="{{ route('basket-remove', $product) }}" method="POST">
                 <button type="submit" class="app-btn btn-red">-</button>
@@ -21,8 +21,8 @@
         </div>
     </td>
 
-    <td class="basket-table__price">{{ $product->price }} руб.</td>
+    <td class="app-table__price">{{ $product->price }} руб.</td>
 
-    <td class="basket-table__price">{{ $product->getPriceForCount() }} руб.</td>
+    <td class="app-table__price">{{ $product->getPriceForCount() }} руб.</td>
 
 </tr>

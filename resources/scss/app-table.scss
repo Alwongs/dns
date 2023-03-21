@@ -1,15 +1,19 @@
-.orders-table {
+.app-table {
     tr td:first-child {
-        padding-left: 8px;        
+        padding-left: 8px;       
     }
     width: 100%;
     border-collapse: collapse;
     thead tr {
         border-bottom: 1px solid $grey; 
-     
+        font-weight: 700;       
     }
     th {
         text-align: start; 
+        padding: 4px 12px;
+    }
+    td {
+        padding: 0 12px;
     }
     &__item {
         border-bottom: 1px solid $lightGrey;
@@ -22,6 +26,13 @@
     }
     &__name img {
         margin-right: 16px;
+    }
+    &__td-image {
+        height: 200px;
+        padding: 8px 0;
+        img {
+            height: 100%;
+        }
     }
     &__btn-group {
         button {
