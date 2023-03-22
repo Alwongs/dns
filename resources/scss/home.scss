@@ -1,9 +1,10 @@
 .home-page {
-    text-align: center;
     &__image {
-        height: 500px;
+        height: 600px;
+        text-align: center;
     }
-    img {
+    &__image img {
         height: 100%;
     }
+
 }

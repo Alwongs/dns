@@ -20,12 +20,12 @@
 
             @csrf
 
+
             <x-my-input-element :label="'Название:'" :name="'name'" :value=" isset($category) ? $category->name : '' " /> 
 
             <x-my-input-element :label="'Код:'" :name="'code'" :value=" isset($category) ? $category->code : '' " />           
 
             <x-my-textarea-element :label="'Описание:'" :name="'description'" :value=" isset($category) ? $category->description : '' " />
-
 
             <div class="app-form__element">
                 <label for="image">Картинка:</label>

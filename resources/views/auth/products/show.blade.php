@@ -3,7 +3,7 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <h1 class="app-page__title">
-        Категория: {{ $category->name }}
+        Продукт: {{ $product->name }}
     </h1>
 
     <table class="app-table mb-8">
@@ -14,39 +14,46 @@
             </tr>
         </thead>
         <tbody>
+
             <tr class="app-table__item">   
                 <td>Id</td> 
-                <td>{{ $category->id }}</td>
+                <td>{{ $product->id }}</td>
             </tr>
 
             <tr class="app-table__item">   
                 <td>Код</td>
-                <td>{{ $category->code }}</td>
+                <td>{{ $product->code }}</td>
             </tr>
 
             <tr class="app-table__item">   
                 <td>Название</td>
-                <td>{{ $category->name }}</td>
+                <td>{{ $product->name }}</td>
             </tr>
 
             <tr class="app-table__item">   
                 <td>Описание</td>
-                <td>{{ $category->description }}</td>
+                <td>{{ $product->description }}</td>
+            </tr>
+
+            <tr class="app-table__item">   
+                <td>Цена</td>
+                <td>{{ $product->price }}</td>
             </tr>
 
             <tr class="app-table__item">   
                 <td>Картинка</td>
                 <td>
                     <div class="app-table__image">
-                        <img src="{{ Storage::url($category->image) }}" alt="image">
+                        <img src="{{ Storage::url($product->image) }}" alt="image">
                     </div>
                 </td>
             </tr>
 
             <tr class="app-table__item">   
-                <td>Количество товаров</td>
-                <td>{{ $category->products->count() }}</td>
-            </tr>       
+                <td>Категория:</td> 
+                <td>{{ $product->category->name }}</td>
+            </tr>
+       
         </tbody>
     </table>
    

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -35,12 +37,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        // dd($request);
-        $path = $request->file('image')->store('categories');
         $params = $request->all();
-        $params['image'] = $path;
+        unset($params['image']);
+        if ($request->has('image')) {
+            $path = $request->file('image')->store('categories');
+            $params['image'] = $path;
+        }
 
         Category::create($params);
         return redirect()->route('category.index');
@@ -75,9 +79,18 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryRequest $request, Category $category)
     {
-        $category->update($request->all());
+        $params = $request->all();
+        unset($params['image']);
+
+        if ($request->has('image')) {
+            Storage::delete($category->image);
+            $path = $request->file('image')->store('categories');
+            $params['image'] = $path;
+        }
+
+        $category->update($params);
         return redirect()->route('category.index');        
     }
 
@@ -89,6 +102,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        Storage::delete($category->image);
         $category->delete();
         return redirect()->route('category.index');          
     }

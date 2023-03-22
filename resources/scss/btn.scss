@@ -8,6 +8,10 @@
     font-size: 15px;
     color: $white;
 }
+input[type="submit"] {
+    cursor: pointer;
+    width: fit-content;    
+}
 .btn-default {
     background-color: $white;
     color: $commonText;

@@ -9,7 +9,7 @@
     @endisset
 
     <div class="app-page__form-container">
-        <form method="POST" class="app-form"
+        <form method="POST" class="app-form" enctype="multipart/form-data"
             @isset($product) 
                 action="{{ route('product.update', $product)  }}"
             @else
@@ -41,11 +41,20 @@
 
             <x-my-input-element :label="'Название:'" :name="'name'" :value=" isset($product) ? $product->name : '' " /> 
 
-            <x-my-input-element :label="'Код:'" :name="'code'" :value=" isset($product) ? $product->code : '' " />
-
-            <x-my-input-element :label="'Цена:'" :name="'price'" :value=" isset($product) ? $product->price : '' " />            
+            <x-my-input-element :label="'Код:'" :name="'code'" :value=" isset($product) ? $product->code : '' " />          
 
             <x-my-textarea-element :label="'Описание:'" :name="'description'" :value=" isset($product) ? $product->description : '' " />
+
+            <x-my-input-element :label="'Цена:'" :name="'price'" :value=" isset($product) ? $product->price : '' " />  
+
+            <div class="app-form__element">
+                <label for="image">Картинка:</label>
+                <div class="app-form__file-block">                
+                    <label class="app-btn btn-default">
+                        Загрузить <input type="file" name="image" id="image">
+                    </label>
+                </div>
+            </div>             
 
             <div class="app-form__btn-block">
                 <button type="submit" class="app-btn btn-green">Сохранить</button>

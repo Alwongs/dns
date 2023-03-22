@@ -12,7 +12,7 @@
         </p>
 
         <div class="product-page__image">
-            <img src="{{ Vite::asset('resources/images/cap1.jpg') }}" alt="">
+            <img src="{{ Storage::url($product->image) }}" alt="">
         </div>
 
         <p class="product-page__description">

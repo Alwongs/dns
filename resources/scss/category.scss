@@ -1,11 +1,20 @@
 .category-list {
+    display: flex;
+    justify-content: center;
     li {
         font-size: 22px;
         margin-bottom: 16px;
+        margin-right: 70px;
         text-align: center;
         font-weight: 700;
     }
     li a {
         color: $commonText;
+    }
+    &__item-image {
+        height: 140px;
+    }
+    &__item-image img {
+        height: 100%;
     }
 }

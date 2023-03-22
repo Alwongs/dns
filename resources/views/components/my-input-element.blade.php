@@ -11,7 +11,8 @@
 
 <div class="app-form__element">
     <label for="{{ $name }}">{{ $label }}</label>
-    <div class="app-form__input-block">                
+    <div class="app-form__input-block">  
+           
         <input 
             id="{{ $name }}" 
             type="{{ $type }}" 
@@ -21,6 +22,11 @@
             {{ $required ? 'required' : '' }} 
             autocomplete="{{ $autocomplete}}"
         />
+            @error($name)
+                <ol>
+                    <li>{{ $message }}</li>
+                </ol>
+            @enderror
 
             @if ($messages)
                 <ol {{ $attributes->merge(['class' => '']) }}>

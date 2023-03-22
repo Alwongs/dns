@@ -1,7 +1,7 @@
 <li class="product-card">
 
     <div class="product-card__image">
-        <img src="{{ Vite::asset('resources/images/cap1.jpg') }}" alt="">
+        <img src="{{ Storage::url($product->image) }}" alt="">
     </div>
 
     <h2 class="product-card__title">
