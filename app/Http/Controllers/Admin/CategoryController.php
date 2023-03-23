@@ -47,7 +47,7 @@ class CategoryController extends Controller
         }
 
         Category::create($params);
-        return redirect()->route('category.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -91,7 +91,7 @@ class CategoryController extends Controller
         }
 
         $category->update($params);
-        return redirect()->route('category.index');        
+        return redirect()->route('categories.index');        
     }
 
     /**
@@ -102,8 +102,10 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        Storage::delete($category->image);
+        if($category->image) {
+            Storage::delete($category->image);
+        }
         $category->delete();
-        return redirect()->route('category.index');          
+        return redirect()->route('categories.index');          
     }
 }

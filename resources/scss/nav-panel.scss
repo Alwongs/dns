@@ -28,6 +28,9 @@
     a:not(:last-child) {
         margin-right: 32px;
     }  
+    .active {
+        border-bottom: 3px solid rgba($white, 0.3);
+    }
     &__left {
         text-transform: uppercase; 
     }

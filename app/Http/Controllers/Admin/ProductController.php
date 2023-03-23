@@ -49,7 +49,7 @@ class ProductController extends Controller
         }
 
         Product::create($params);
-        return redirect()->route('product.index');
+        return redirect()->route('products.index');
     }
 
     /**
@@ -95,7 +95,7 @@ class ProductController extends Controller
 
 
         $product->update($params);
-        return redirect()->route('product.index');  
+        return redirect()->route('products.index');  
     }
 
     /**
@@ -108,6 +108,6 @@ class ProductController extends Controller
     {
         Storage::delete($product->image);        
         $product->delete();
-        return redirect()->route('product.index');  
+        return redirect()->route('products.index');  
     }
 }

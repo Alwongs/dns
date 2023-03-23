@@ -13,7 +13,6 @@
                 <th>Код</th>
                 <th>Категория</th>
                 <th>Название</th>
-                <th>Описание</th>
                 <th>Цена</th>
                 <th>Действия</th>
             </tr>
@@ -33,6 +32,6 @@
     </table>
 
     <div class="btn-group">
-        <a href="{{ route('product.create') }}" class="app-btn btn-green">Добавить продукт</a>
+        <a href="{{ route('products.create') }}" class="app-btn btn-green">Добавить продукт</a>
     </div>    
 </x-guest-layout>

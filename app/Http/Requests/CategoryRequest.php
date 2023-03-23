@@ -24,13 +24,13 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'code' => 'required|min:3|max:255',
+            'code' => 'required|min:3|max:255|unique:categories,code',
             'name' => 'required|min:3|max:255',
             'description' => 'required|min:5',
         ];
 
-        if ($this->route()->named('category.store')) {
-            $rules['code'] .= '|unique:categories,code';
+        if ($this->route()->named('categories.update')) {
+            $rules['code'] .= ',' . $this->route()->parameter('category')->id;  
         }
 
         return $rules;

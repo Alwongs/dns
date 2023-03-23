@@ -6,7 +6,11 @@
     <td class="app-table__date">{{ $order->created_at->format('H:i d.m.Y') }}</td>
     <td class="app-table__price">{{ $order->getFullPrice() }}</td>
     <td class="app-table__actions">
-        <button class="app-btn btn-green">Открыть</button>    
+        @if(Auth::user()->isAdmin())
+            <a href="{{ route('orders.show', $order) }}" class="app-btn btn-green">Открыть</a> 
+        @else
+            <a href="{{ route('person-orders.show', $order) }}" class="app-btn btn-green">Открыть</a> 
+        @endif   
     </td>
 
 </tr>

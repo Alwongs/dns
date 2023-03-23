@@ -30,6 +30,6 @@
     </table>
 
     <div class="btn-group">
-        <a href="{{ route('category.create') }}" class="app-btn btn-green">Добавить категорию</a>
+        <a href="{{ route('categories.create') }}" class="app-btn btn-green">Добавить категорию</a>
     </div>    
 </x-guest-layout>

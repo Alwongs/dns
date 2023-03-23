@@ -11,9 +11,9 @@
     <div class="app-page__form-container">
         <form method="POST" class="app-form" enctype="multipart/form-data"
             @isset($product) 
-                action="{{ route('product.update', $product)  }}"
+                action="{{ route('products.update', $product)  }}"
             @else
-                action="{{ route('product.store')  }}"
+                action="{{ route('products.store')  }}"
             @endisset
         >
             @isset($product) @method('PUT') @endisset  

@@ -16,19 +16,13 @@
             </tr>
         </thead>
         <tbody>
-            @if($order)
-                @foreach($order->products as $product)
-                    @include('my-components.product-item')
-                @endforeach
-                <tr class="app-table__sum">
-                    <td class="app-table__name" colspan="3">Общая стоимость: </td>
-                    <td class="app-table__price">{{ $order->getFullPrice() }} руб.</td>
-                </tr> 
-            @else
-                <tr class="app-table__item" style="text-align:center;">
-                    <td class="app-table__name" colspan="4">В корзине нет товаров </td>
-                </tr>                            
-            @endif           
+            @foreach($order->products as $product)
+                @include('my-components.product-item')
+            @endforeach
+            <tr class="app-table__sum">
+                <td class="app-table__name" colspan="3">Общая стоимость: </td>
+                <td class="app-table__price">{{ $order->getFullPrice() }} руб.</td>
+            </tr>           
         </tbody>
     </table>
 

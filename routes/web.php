@@ -5,9 +5,10 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasketController;
-use App\Http\Controllers\Admin\OrderController;
-use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Person\OrderController as PersonOrderController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,15 +21,27 @@ Route::middleware('auth')->group(function () {
 });
 require __DIR__.'/auth.php';
 
-Route::group([
-    'middleware' => 'auth',
-    'prefix' => 'admin'
-], function() {
-    Route::group(['middleware' => 'is_admin'], function() {
-        Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+
+
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::group([ 
+        'prefix' => 'person' 
+    ], function () {
+        Route::get('/orders', [PersonOrderController::class, 'index'])->name('person-orders.index');
+        Route::get('/orders/{order}', [PersonOrderController::class, 'show'])->name('person-orders.show');    
     });
-    Route::resource('category', CategoryController::class);
-    Route::resource('product', ProductController::class);
+
+    Route::group(['prefix' => 'admin'], function() {
+
+        Route::group(['middleware' => 'is_admin'], function() {
+            Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders');
+            Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
+        });
+        Route::resource('categories', CategoryController::class);
+        Route::resource('products', ProductController::class);
+    });
 });
 
 

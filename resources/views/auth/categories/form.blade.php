@@ -11,9 +11,9 @@
     <div class="app-page__form-container">
         <form method="POST" class="app-form" enctype="multipart/form-data"
             @isset($category) 
-                action="{{ route('category.update', $category)  }}"
+                action="{{ route('categories.update', $category)  }}"
             @else
-                action="{{ route('category.store')  }}"
+                action="{{ route('categories.store')  }}"
             @endisset
         >
             @isset($category) @method('PUT') @endisset  
@@ -21,17 +21,17 @@
             @csrf
 
 
-            <x-my-input-element :label="'Название:'" :name="'name'" :value=" isset($category) ? $category->name : '' " /> 
+            <x-my-input-element :label="'Название:'" :name="'name'" :value=" old('name', isset($category) ? $category->name : null) " /> 
 
-            <x-my-input-element :label="'Код:'" :name="'code'" :value=" isset($category) ? $category->code : '' " />           
+            <x-my-input-element :label="'Код:'" :name="'code'" :value=" old('code', isset($category) ? $category->code : null) " />           
 
-            <x-my-textarea-element :label="'Описание:'" :name="'description'" :value=" isset($category) ? $category->description : '' " />
+            <x-my-textarea-element :label="'Описание:'" :name="'description'" :value=" old('description', isset($category) ? $category->description : null) " />
 
             <div class="app-form__element">
                 <label for="image">Картинка:</label>
                 <div class="app-form__file-block">                
                     <label class="app-btn btn-default">
-                        Загрузить <input type="file" name="image" id="image">
+                        Загрузить <input type="file" name="image" id="image" >
                     </label>
                 </div>
             </div>            
