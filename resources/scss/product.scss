@@ -1,3 +1,17 @@
+.product-filtes {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    &__element {
+        margin-right: 64px;
+    }
+    &__btn-group input {
+        margin-right: 4px;
+    }
+}
 .product-list {
     display: flex;
     justify-content: space-evenly;
@@ -14,17 +28,18 @@
 }
 
 .product-card {
+    position: relative;
     border: 1px solid $lightGrey;
-    height: 280px;
+    height: 320px;
     width: 250px;
-    padding: 16px;
+    padding: 8px;
     &__image {
         width: 140px;
         height: 140px;
         margin: 0 auto 16px;
     }
     &__image img {
-        width: 100%;   
+        width: 100%; 
     }
     &__title {
         font-weight: 700;
@@ -32,12 +47,46 @@
         margin-bottom: 8px;
     }
     &__price {
-        font-size: 12px;  
+        font-size: 16px;  
         margin-bottom: 8px;  
     }
     &__description {
         font-size: 14px;
     }
+    &__btn-group {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;    
+        padding: 16px 0;    
+    }    
+    &__labels {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 4px;
+    }
+    &__label {
+        display: block;
+        height: 18px;
+        line-height: 18px;
+        padding: 0 6px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+.label-success {
+    background-color: $greenBg;
+    color: $white;
+}
+.label-warning {
+    background-color: $orangeBg;
+    color: $black;
+}
+.label-danger {
+    background-color: $redBg;
+    color: $white;
 }
 
 .product-page {

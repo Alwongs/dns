@@ -1,0 +1,30 @@
+.pagination {
+
+    display: flex;
+    justify-content: center;
+    li {
+        border: 1px solid lightgrey;
+        min-width: 32px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        color: lighten($commonText, 16);
+        font-weight: 600;
+        margin-right: 4px;
+        border-radius: 4px;
+    }
+    li a {
+        color: lighten($commonText, 16); 
+        display: block;       
+    }
+    .active {
+        background-color: lighten($commonBg, 16);
+        color: $white;
+        border: 1px solid $commonBg;
+    }
+    li:not(.active):hover {
+        cursor: pointer;
+        border: 1px solid $commonBg;        
+    }
+    
+}

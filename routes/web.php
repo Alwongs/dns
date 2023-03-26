@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ResetController;
 
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Person\OrderController as PersonOrderController;
@@ -22,10 +23,9 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-
+Route::get('reset', [ResetController::class, 'reset'])->name('reset');
 
 Route::middleware(['auth'])->group(function () {
-
     Route::group([ 
         'prefix' => 'person' 
     ], function () {
@@ -45,15 +45,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-
 Route::get('/', [MainController::class, 'index'])->name('welcome');
 Route::get('/categories', [MainController::class, 'categories'])->name('categories');
 Route::get('/products', [MainController::class, 'products'])->name('products');
 
-
 Route::group(['prefix' => 'basket'], function() {
     Route::post('/add/{id}', [BasketController::class, 'basketAdd'])->name('basket-add');
-
     Route::group(['middleware' => 'basket_not_empty'], function() {
         Route::get('/', [BasketController::class, 'basket'])->name('basket');
         Route::get('/place', [BasketController::class, 'basketPlace'])->name('basket-place');

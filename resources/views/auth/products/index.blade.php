@@ -31,6 +31,8 @@
         </tbody>
     </table>
 
+    {{ $products->links('pagination.default') }}
+
     <div class="btn-group">
         <a href="{{ route('products.create') }}" class="app-btn btn-green">Добавить продукт</a>
     </div>    

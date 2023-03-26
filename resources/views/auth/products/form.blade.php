@@ -21,7 +21,6 @@
 
             <div class="app-form__element">
                 <label for="category_id">Категория</label>
-
                 <div class="app-form__input-block">                
                     <select id="category_id" name="category_id"> 
                         @foreach ($categories as $category)                            
@@ -54,7 +53,31 @@
                         Загрузить <input type="file" name="image" id="image">
                     </label>
                 </div>
-            </div>             
+            </div>    
+
+            {{-- @foreach([
+                'hit' => 'Хит',
+                'new' => 'Новинка',
+                'recommend' => 'Рекомендуемые'
+            ] as $field => $title)
+                <div class="app-form__element flex-start">
+                    <label for="{{ $field }}">{{ $title }}:</label>
+                    <div class="app-form__checkbox">  
+                        <input type="checkbox" name="{{ $field }}" id="{{ $field }}">
+                    </div>
+                </div>    
+            @endforeach     --}}
+
+            @foreach([
+                'hit' => 'Хит',
+                'new' => 'Новинка',
+                'recommend' => 'Рекомендуемые'
+            ] as $field => $title)
+                <x-my-checkbox-element 
+                    :label="$title . ':'" :name="$field" :value=" isset($product) ? $product->$field : '' " 
+                    :checked=" isset($product) && $product->$field === 1 ? true : false "
+                />   
+            @endforeach  
 
             <div class="app-form__btn-block">
                 <button type="submit" class="app-btn btn-green">Сохранить</button>

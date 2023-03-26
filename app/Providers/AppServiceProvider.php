@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::if('admin', function() {
-            return Auth::user()->isAdmin();
+            return Auth::check() && Auth::user()->isAdmin();
         });
     }
 }

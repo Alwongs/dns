@@ -4,15 +4,15 @@
         @auth        
             @admin
                 <li> <a href="{{ route('categories.index') }}"> Категории </a> </li>
-                <li> <a href="{{ route('products.index') }}"> Все товары </a> </li>
+                <li> <a href="{{ route('products.index') }}"> Все товары </a> </li>      
+                <li> <a href="{{ route('reset') }}"> Сбросить проект к начальному состоянию </a> </li>                 
             @endadmin
-            <li> <a href="{{ route('basket') }}"> Корзина </a> </li>
-        @endauth
+            {{-- <li> <a href="{{ route('basket') }}"> Корзина </a> </li> --}}
+        @endauth       
     </ul>
 
     @if (Route::has('login'))
         <div class="nav-admin-panel__right">
-        <a style="color:red;" href="#">Спрятать войти или регистрация взависимости от роута.....  ==></a>
             @auth
                 <form method="POST" action="{{ route('logout') }}">           
                     @csrf
@@ -20,10 +20,10 @@
                     <a :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Выйти</a>
                 </form>                       
             @else
-                @if (Route::has('register'))
+                @if (!Route::currentRouteNamed('login'))
                     <a href="{{ route('login') }}">Войти</a> 
                 @endif                    
-                @if (Route::has('login'))
+                @if (!Route::currentRouteNamed('register'))
                     <a href="{{ route('register') }}">Регистрация</a>
                 @endif
             @endauth

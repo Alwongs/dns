@@ -6,7 +6,8 @@
     'autocomplete' => '',
     'autofocus' => false,
     'required' => false,
-    'messages' => ''
+    'messages' => '',
+    'checked' => false
 ])
 
 <div class="app-form__element">
@@ -18,6 +19,9 @@
             type="{{ $type }}" 
             name="{{ $name }}" 
             value="{{ $value }}" 
+            @if ($checked) 
+                checked 
+            @endif
             {{ $autofocus ? 'autofocus' : '' }} 
             {{ $required ? 'required' : '' }} 
             autocomplete="{{ $autocomplete}}"

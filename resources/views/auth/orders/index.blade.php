@@ -30,4 +30,7 @@
             @endif          
         </tbody>
     </table>
+
+    {{ $orders->links('pagination.default') }}
+
 </x-guest-layout>

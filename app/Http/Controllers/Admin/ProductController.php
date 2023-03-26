@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::get();
+        $products = Product::paginate(4);
         return view('auth.products.index', compact('products'));
     }
 
@@ -93,6 +93,11 @@ class ProductController extends Controller
             $params['image'] = $path;
         }
 
+        foreach(['hit', 'new', 'recommend'] as $fieldName) {
+            if (!isset($params[$fieldName])) {
+                $params[$fieldName] = 0;
+            }
+        }
 
         $product->update($params);
         return redirect()->route('products.index');  
@@ -106,7 +111,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        Storage::delete($product->image);        
+        if ($product->image) {
+            Storage::delete($product->image);
+        }
         $product->delete();
         return redirect()->route('products.index');  
     }

@@ -6,7 +6,7 @@
         {{ $product->name }}
     </h1>
 
-    <div class="product-page">
+    <main class="product-page">
         <p class="product-page__price">
             Цена: {{ $product->price }}
         </p>
@@ -20,6 +20,6 @@
         </p>  
 
         <a href="{{ route('basket') }}" class="app-btn btn-green">В корзину</a>  
-    </div>
+    </main>
 
 @endsection
