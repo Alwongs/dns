@@ -4,10 +4,14 @@
         <li @routeactive('categor*')> <a href="{{ route('categories') }}"> Категории </a> </li>
         <li @routeactive('product*')> <a href="{{ route('products') }}"> Товары </a> </li>
         <li @routeactive('basket*')> <a href="{{ route('basket') }}"> Корзина </a> </li>
-        @admin        
-            <li> <a href="{{ route('reset') }}"> Сбросить проект к начальному состоянию </a> </li>
-        @endadmin            
+           
     </ul>
+
+    <div class="nav-panel__center">
+        @admin        
+            <a href="{{ route('reset') }}"> *Сброс-БД* </a>
+        @endadmin 
+    </div>
 
     @if (Route::has('login'))
         <div class="nav-panel__right">
@@ -21,7 +25,7 @@
                         <a href="{{ route('person-orders.index') }}">Мои заказы</a> 
                     @endadmin
 
-                    <a href="{{ url('/profile') }}">{{ Auth::user()->email }}</a> 
+                    <a href="{{ url('/profile') }}">{{ Auth::user()->name }}</a> 
                     <a :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Выйти</a>
 
                 </form>                       

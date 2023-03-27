@@ -4,19 +4,24 @@
         @auth        
             @admin
                 <li> <a href="{{ route('categories.index') }}"> Категории </a> </li>
-                <li> <a href="{{ route('products.index') }}"> Все товары </a> </li>      
-                <li> <a href="{{ route('reset') }}"> Сбросить проект к начальному состоянию </a> </li>                 
+                <li> <a href="{{ route('products.index') }}"> Все товары </a> </li>                 
             @endadmin
             {{-- <li> <a href="{{ route('basket') }}"> Корзина </a> </li> --}}
         @endauth       
     </ul>
+
+    <div class="nav-panel__center">
+        @admin        
+            <a href="{{ route('reset') }}"> *Сброс-БД* </a>
+        @endadmin 
+    </div>    
 
     @if (Route::has('login'))
         <div class="nav-admin-panel__right">
             @auth
                 <form method="POST" action="{{ route('logout') }}">           
                     @csrf
-                    <a href="{{ url('/profile') }}">{{ Auth::user()->email }}</a>    
+                    <a href="{{ url('/profile') }}">{{ Auth::user()->name }}</a>    
                     <a :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Выйти</a>
                 </form>                       
             @else

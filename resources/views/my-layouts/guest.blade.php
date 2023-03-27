@@ -17,14 +17,11 @@
     <body>
         @include('my-components.admin-nav-panel')    
 
-        <div class="guest-layout">
-            <div class="container">
-                <div class="app-page"> 
+        <div class="app-page"> 
 
-                    {{ $slot }}
+            {{ $slot }}
 
-                </div>
-            </div>
         </div>
+
     </body>
 </html>

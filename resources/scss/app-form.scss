@@ -1,4 +1,17 @@
 .app-form {
+    max-width: 800px;
+    margin: 0 auto 64px;
+    &.short-width {
+        max-width: 500px;        
+    }
+    @media (min-width: $desktop-min) and (max-width: $desktop-max) {       
+    }     
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {        
+    }      
+    @media (max-width: $mobile-max) {  
+        width: 100%;            
+    } 
+
     &__element {
         display: flex;
         justify-content: space-between; 
@@ -6,15 +19,17 @@
         margin-bottom: 16px;    
         @media (max-width: $mobile-max) { 
             flex-direction: column;
+            margin-bottom: 24px; 
         }           
     }
     &__element.flex-start {
         justify-content: flex-start; 
     }
     &__input-block {  
-        width: 540px;
+        flex-grow: 1;
         @media (max-width: $mobile-max) { 
-            width: 100%;   
+            width: 100%;
+            text-align: center;  
         }   
     }
     &__input-block ol li {  
@@ -25,10 +40,15 @@
         padding-left: 16px;
     }    
     label {
-        width: 150px;
+        width: 160px;
         margin-right: 8px;
         font-size: 14px;
         font-weight: 700;
+        @media (max-width: $mobile-max) {
+            width: fit-content;
+            margin-bottom: 4px;
+            margin-right: 0;   
+        }        
     }
     input:not([type="checkbox"], [type="file"]) {
         border: 1px solid $commonBg;
@@ -61,7 +81,7 @@
     textarea {
         border: 1px solid $commonBg;  
         border-radius: $formInputRadius;       
-        width: 540px;
+        width: 100%;
         height: 150px;
         font-size: 18px; 
         color: $commonText;               
@@ -70,8 +90,7 @@
             width: 100%;     
         }         
     }
-    &__file-block {       
-        width: 540px;
+    &__file-block { 
         height: 34px;
         padding-top: 8px;
     }
@@ -81,15 +100,15 @@
     &__file-block label {       
         border: none;
     }
+    input[type="checkbox"] {
+        width: 23px;
+        height: 23px;
+    }
+
     &__btn-block {
         text-align: center;
 
     }
 
-    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
-    }     
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-    }      
-    @media (max-width: $mobile-max) {     
-    }      
+     
 }

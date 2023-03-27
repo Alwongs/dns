@@ -18,19 +18,20 @@
             </tr>
         </thead>
         <tbody>
-
-            @if($orders)
+            @if(count($orders) > 0)
                 @foreach($orders as $order)
                     @include('my-components.admin-order-item')
                 @endforeach
             @else
                 <tr class="app-table__item" style="text-align:center;">
-                    <td class="app-table__name" colspan="4">Заказов нет </td>
+                    <td class="app-table__name" colspan="6">Заказов нет </td>
                 </tr>                            
             @endif          
         </tbody>
     </table>
 
-    {{ $orders->links('pagination.default') }}
+    @if($orders)
+        {{ $orders->links('pagination.default') }}
+    @endif 
 
 </x-guest-layout>
