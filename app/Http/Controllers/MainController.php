@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\ProductsFilterRequest;
+use Illuminate\Support\Facades\Log;
 
 class MainController extends Controller
 {
@@ -19,6 +20,7 @@ class MainController extends Controller
     }
 
     public function category($code) {
+
         $category = Category::where('code', $code)->first();
         return view('shop.category.show', compact('category'));
     }
@@ -29,7 +31,6 @@ class MainController extends Controller
     }
 
     public function products(ProductsFilterRequest $request) {
-        // dd($request->all());
 
         $productQuery = Product::query();
 

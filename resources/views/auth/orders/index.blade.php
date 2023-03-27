@@ -30,8 +30,6 @@
         </tbody>
     </table>
 
-    @if($orders)
-        {{ $orders->links('pagination.default') }}
-    @endif 
+    {{ $orders->links('pagination.default') }}
 
 </x-guest-layout>

@@ -4,14 +4,18 @@
 
     <h1 class="app-page__title">Все товары</h1>
 
-    @include('my-components.product-filters')
+    <div class="proucts-page__container">
 
-    <ul class="product-list">
-        @foreach($products as $product)
-            @include('my-components.product-card')
-        @endforeach  
-    </ul>  
+        @include('my-components.product-filters')
 
-    {{ $products->links('pagination.default') }}
+        <ul class="product-list">
+            @foreach($products as $product)
+                @include('my-components.product-card')
+            @endforeach  
+        </ul>  
+
+        {{ $products->links('pagination.default') }}
+
+    </div>
     
 @endsection
