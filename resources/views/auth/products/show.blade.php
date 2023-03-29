@@ -41,6 +41,11 @@
             </tr>
 
             <tr class="app-table__item">   
+                <td>Кол-во</td>
+                <td>{{ $product->count }}</td>
+            </tr>
+
+            <tr class="app-table__item">   
                 <td>Картинка</td>
                 <td>
                     <div class="app-table__image">

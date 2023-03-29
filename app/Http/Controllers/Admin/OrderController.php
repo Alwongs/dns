@@ -9,11 +9,13 @@ use App\Models\Order;
 class OrderController extends Controller
 {
     public function index() {
-        $orders = Order::where('status', 1)->paginate(2);
+        $orders = Order::active()->paginate(2);
 
         return view('auth.orders.index', compact('orders'));
     }
+
     public function show(Order $order) {
-        return view('auth.orders.show', compact('order'));
+        $products = $order->products()->withTrashed()->get();
+        return view('auth.orders.show', compact('order', 'products'));
     }
 }

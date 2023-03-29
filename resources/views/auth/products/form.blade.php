@@ -45,6 +45,8 @@
 
         <x-my-input-element :label="'Цена:'" :name="'price'" :value=" isset($product) ? $product->price : '' " />  
 
+        <x-my-input-element :label="'Кол-во:'" :name="'count'" :value=" isset($product) ? $product->count : '' " />  
+
         <div class="app-form__element">
             <label for="image">Картинка:</label>
             <div class="app-form__file-block">                

@@ -1,7 +1,7 @@
 <tr class="app-table__item">
 
     <td class="app-table__name">
-        <a href="{{ route('product', $product) }}">
+        <a href="{{ route('product', [$product->category->code, $product->code]) }}">
             <img height="38px" src="{{ Storage::url($product->image) }}">
             {{ $product->name }}
         </a>

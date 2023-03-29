@@ -18,12 +18,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($order->products as $product)
+            @foreach($products as $product)
                 @include('my-components.admin-order-products-item')
             @endforeach
             <tr class="app-table__item">
                 <td colspan="3" class="app-table__actions">Общая стоимость</td>
-                <td class="app-table__price">{{ $order->getFullPrice() }}</td>
+                <td class="app-table__price">{{ $order->calculateFullSum() }}</td>
             </tr>    
         </tbody>
     </table>

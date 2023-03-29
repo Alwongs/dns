@@ -16,12 +16,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($order->products as $product)
+            @foreach($order->products()->with('category')->get() as $product)
                 @include('my-components.product-item')
             @endforeach
             <tr class="app-table__sum">
                 <td class="app-table__name" colspan="3">Общая стоимость: </td>
-                <td class="app-table__price">{{ $order->getFullPrice() }} руб.</td>
+                <td class="app-table__price">{{ $order->getFullSum() }} руб.</td>
             </tr>           
         </tbody>
     </table>

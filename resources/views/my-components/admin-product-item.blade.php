@@ -5,6 +5,7 @@
     <td class="app-table__category">{{ $product->category->name }}</td>
     <td class="app-table__name">{{ $product->name }}</td>
     <td class="app-table__price">{{ $product->price }}</td>
+    <td class="app-table__price">{{ $product->count }}</td>
     <td class="app-table__actions">
         <form action="{{ route('products.destroy', $product) }}" method="POST">    
             <a href="{{ route('products.show', $product) }}" class="app-btn btn-green">Открыть</a>    

@@ -1,6 +1,7 @@
-
+composer dump-autoload
 
 php artisan route:cache
 php artisan view:clear
+php artisan config:cache
 
 npm install -D sass

@@ -7,6 +7,9 @@
     </h1>
 
     <main class="product-page">
+        <p class="product-page__category">
+            ( {{ $product->category->name }} )
+        </p>
         <p class="product-page__price">
             Цена: {{ $product->price }}
         </p>
@@ -18,8 +21,11 @@
         <p class="product-page__description">
             {{ $product->description }}
         </p>  
-
-        <a href="{{ route('basket') }}" class="app-btn btn-green">В корзину</a>  
+        @if($product->isAvailable())
+            <a href="{{ route('basket-add', $product) }}" class="app-btn btn-green">В корзину</a> 
+        @else
+            <button type="button" class="app-btn btn-disabled">Не доступен</button>        
+        @endif         
     </main>
 
 @endsection

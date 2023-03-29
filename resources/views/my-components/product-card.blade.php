@@ -29,8 +29,12 @@
     </p>
 
     <form class="product-card__btn-group" action="{{ route('basket-add', $product) }}" method="POST">
-        <button type="submit" href="{{ route('basket') }}" class="app-btn btn-blue">В корзину</button>
-        <a href="{{ route('product', [$product->category->code, $product->code]) }}" class="app-btn btn-default">Подробнее</a>
+        @if($product->isAvailable())
+            <button type="submit" class="app-btn btn-blue">В корзину</button>
+        @else
+            <button type="button" class="app-btn btn-disabled">Не доступен</button>        
+        @endif
+        <a href="{{ route('product', [isset($category) ? $category->code : $product->category->code, $product->code]) }}" class="app-btn btn-default">Подробнее</a>
         @csrf
     </form>
 

@@ -9,6 +9,7 @@ use App\Models\Product;
 
 class BasketController extends Controller
 {
+
     public function basket() {
         $orderId = session('orderId');
         if (!is_null($orderId)) {
@@ -29,6 +30,8 @@ class BasketController extends Controller
         return view('shop.basket.order', compact('order'));
     }
 
+
+
     public function basketConfirm(Request $request) {
 
         $orderId = session('orderId');
@@ -45,8 +48,12 @@ class BasketController extends Controller
             session()->flash('warning', 'Случилась ошибка');            
         }
 
+        Order::eraseOrderSum();
+
         return redirect()->route('products');
     }
+
+
 
     public function basketAdd($productId) {
         $orderId = session('orderId') ? session('orderId') : null;
@@ -73,10 +80,14 @@ class BasketController extends Controller
 
         $product = Product::find($productId);
 
+        Order::changeFullSum($product->price);
+
         session()->flash('success', 'Добавлен товар ' . $product->name);
 
         return redirect()->route('basket');
     }
+
+
 
     public function basketRemove($productId) {
         $orderId = session('orderId');
@@ -96,6 +107,8 @@ class BasketController extends Controller
             }   
             
             $product = Product::find($productId);
+
+            Order::changeFullSum(-$product->price);            
 
             session()->flash('warning', 'Удален товар ' . $product->name);            
 

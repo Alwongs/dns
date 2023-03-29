@@ -25,9 +25,9 @@ class MainController extends Controller
         return view('shop.category.show', compact('category'));
     }
     
-    public function product($category, $productCode = null) {
-        $product = Product::where('code', $productCode)->first();
-        return view('shop.product.show', ['product' => $product]);
+    public function product($category, $productCode) {
+        $product = Product::withTrashed()->byCode($productCode)->first();
+        return view('shop.product.show', compact('product'));
     }
 
     public function products(ProductsFilterRequest $request) {
@@ -44,7 +44,7 @@ class MainController extends Controller
 
         foreach (['hit', 'new', 'recommend'] as $field) {
             if ($request->has($field)) {
-                $productQuery->where($field, 1);
+                $productQuery->$field();
             }
         }
 

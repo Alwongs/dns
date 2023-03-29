@@ -12,6 +12,10 @@ input[type="submit"] {
     cursor: pointer;
     width: fit-content;    
 }
+.btn-disabled {
+    border: 1px solid transparent;
+    color: $commonText;    
+}
 .btn-default {
     background-color: $white;
     color: $commonText;

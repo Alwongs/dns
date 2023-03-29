@@ -6,7 +6,7 @@
         Подтвердите заказ:
     </h1>
 
-    <p class="order-page__price">Общая стоимость заказа: {{ $order->getFullPrice() }}</p>
+    <p class="order-page__price">Общая стоимость заказа: <b>{{ $order->calculateFullSum() }} руб.</b></p>
 
     <form class="order-page__form form" action="{{ route('basket-confirm') }}" method="POST">
         <p>Укажите свои имя и номер телефона, чтобы наш менеджер мог с вами связаться</p>
