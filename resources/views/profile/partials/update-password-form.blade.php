@@ -32,7 +32,7 @@
         </div>
 
         <div class="app-form__btn-block">
-            <x-green-button>Обновить</x-green-button>
+            <x-btn-success>Обновить</x-btn-success>
 
             @if (session('status') === 'password-updated')
                 <p

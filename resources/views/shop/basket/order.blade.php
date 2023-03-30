@@ -6,33 +6,33 @@
         Подтвердите заказ:
     </h1>
 
-    <p class="order-page__price">Общая стоимость заказа: <b>{{ $order->calculateFullSum() }} руб.</b></p>
+    <p class="app-page__title">Общая стоимость заказа: <b>{{ $order->calculateFullSum() }} руб.</b></p>
 
-    <form class="order-page__form form" action="{{ route('basket-confirm') }}" method="POST">
-        <p>Укажите свои имя и номер телефона, чтобы наш менеджер мог с вами связаться</p>
-        <div class="form__container">
+    <p class="app-page__description">Укажите свои имя и номер телефона, чтобы наш менеджер мог с вами связаться</p>    
 
-            <div class="form__input-block">
-                <label for="name">Имя</label>
-                <div class="form__input">
-                    <input id="name" type="text" name="name">
-                </div>
+    <form class="app-form" action="{{ route('basket-confirm') }}" method="POST">
+
+        <div class="app-form__element">
+            <label for="name">Имя</label>
+            <div class="app-form__input-block">
+                <input id="name" type="text" name="name">
             </div>
-
-            <div class="form__input-block">
-                <label for="phone">Телефон</label>
-                <div class="form__input">
-                    <input id="phone" type="text" name="phone">
-                </div>
-            </div>
-
-            @csrf
-
-            <div class="form__btn-block">
-                <input type="submit" class="app-btn btn-green" name="submit">
-            </div>
-
         </div>
+
+        <div class="app-form__element">
+            <label for="phone">Телефон</label>
+            <div class="app-form__input-block">
+                <input id="phone" type="text" name="phone">
+            </div>
+        </div>
+
+        @csrf
+
+            <div class="app-form__btn-block">
+            {{-- <input type="submit" class="app-btn btn-success" name="submit" value="Подтвердить"> --}}
+            <x-btn-success>Подтвердить</x-btn-success>
+        </div>
+
     </form>
 
 @endsection

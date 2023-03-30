@@ -1,5 +1,14 @@
-<form method="GET" class="product-filtes" action="{{ route('products') }}">
+<form 
+    method="GET" 
+    class="product-filtes" 
 
+    @if(Route::currentRouteNamed('products'))    
+        action="{{ route('products') }}"
+    @else
+        action="{{ route('category', Route::getCurrentRoute()->category) }}"    
+    @endif 
+
+>
     <div class="product-filtes__element">
         <label for="price_from">Цена от</label>
         <input type="text" name="price_from" id="price_from" size="6" value="{{ request()->price_from }}">
@@ -23,8 +32,18 @@
     </div>
 
     <div class="product-filtes__btn-group btn-group">
-        <input type="submit" class="app-btn btn-blue" value="Фильтр">
-        <a href="{{ route('products') }}" class="app-btn btn-warn">Сброс</a>
+        <input type="submit" class="app-btn btn-primary" value="Фильтр">
+            <a 
+                class="app-btn btn-warning"
+                @if(Route::currentRouteNamed('products'))
+                    href="{{ route('products') }}" 
+                @else
+                    href="{{ route('category', Route::getCurrentRoute()->category) }}"    
+                @endif                                     
+            >
+                Сброс
+            </a>
+
     </div>
  
 </form>

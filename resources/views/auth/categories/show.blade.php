@@ -3,7 +3,7 @@
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <h1 class="app-page__title">
-        Категория: {{ $category->name }}
+        {{ $category->name }}
     </h1>
 
     <table class="app-table mb-8">

@@ -35,6 +35,6 @@
     {{ $products->links('pagination.default') }}
 
     <div class="btn-group">
-        <a href="{{ route('products.create') }}" class="app-btn btn-green">Добавить продукт</a>
+        <a href="{{ route('products.create') }}" class="app-btn btn-success">Добавить продукт</a>
     </div>    
 </x-guest-layout>

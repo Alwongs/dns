@@ -19,10 +19,26 @@ class MainController extends Controller
         return view('shop.category.index', compact('categories'));
     }
 
-    public function category($code) {
+    public function category(ProductsFilterRequest $request, $code) {
 
         $category = Category::where('code', $code)->first();
-        return view('shop.category.show', compact('category'));
+
+        $productQuery = $category->products();      
+
+        if ($request->filled('price_from')) {
+            $productQuery->where('price', '>=', $request->price_from);
+        }
+        if ($request->filled('price_to')) {
+            $productQuery->where('price', '<=', $request->price_to);
+        }
+        foreach (['hit', 'new', 'recommend'] as $field) {
+            if ($request->has($field)) {
+                $productQuery->$field();
+            }
+        }
+        $products = $productQuery->paginate(2)->withPath('?' . $request->getQueryString());
+
+        return view('shop.category.show', compact('category', 'products'));
     }
     
     public function product($category, $productCode) {
@@ -32,22 +48,19 @@ class MainController extends Controller
 
     public function products(ProductsFilterRequest $request) {
 
-        $productQuery = Product::query();
+        $productQuery = Product::with('category');
 
         if ($request->filled('price_from')) {
             $productQuery->where('price', '>=', $request->price_from);
         }
-
         if ($request->filled('price_to')) {
             $productQuery->where('price', '<=', $request->price_to);
         }
-
         foreach (['hit', 'new', 'recommend'] as $field) {
             if ($request->has($field)) {
                 $productQuery->$field();
             }
         }
-
         $products = $productQuery->paginate(3)->withPath('?' . $request->getQueryString());
         return view('shop.product.index', compact('products'));
     }    

@@ -11,11 +11,11 @@
         <div class="app-table__btn-group btn-group">
             <span>{{ $product->pivot->count }}</span>
             <form action="{{ route('basket-remove', $product) }}" method="POST">
-                <button type="submit" class="app-btn btn-red">-</button>
+                <x-btn-danger>-</x-btn-danger>
                 @csrf
             </form>
             <form action="{{ route('basket-add', $product) }}" method="POST">
-                <button type="submit" class="app-btn btn-green">+</button>
+                <x-btn-success>+</x-btn-success>
                 @csrf
             </form>
         </div>

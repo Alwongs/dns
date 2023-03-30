@@ -66,10 +66,4 @@ class Product extends Model
     public function isRecommend() {
         return $this->recommend === 1;
     }
-
-
-
-
-
-
 }

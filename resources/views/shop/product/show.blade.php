@@ -22,9 +22,9 @@
             {{ $product->description }}
         </p>  
         @if($product->isAvailable())
-            <a href="{{ route('basket-add', $product) }}" class="app-btn btn-green">В корзину</a> 
-        @else
-            <button type="button" class="app-btn btn-disabled">Не доступен</button>        
+            <a href="{{ route('basket-add', $product) }}" class="app-btn btn-success">В корзину</a> 
+        @else       
+            <x-btn-disabled>Не доступен</x-btn-disabled>        
         @endif         
     </main>
 

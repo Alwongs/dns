@@ -30,7 +30,7 @@
 
     <form class="product-card__btn-group" action="{{ route('basket-add', $product) }}" method="POST">
         @if($product->isAvailable())
-            <button type="submit" class="app-btn btn-blue">В корзину</button>
+            <button type="submit" class="app-btn btn-primary">В корзину</button>
         @else
             <button type="button" class="app-btn btn-disabled">Не доступен</button>        
         @endif

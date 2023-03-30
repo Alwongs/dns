@@ -11,7 +11,6 @@
     @media (max-width: $mobile-max) {  
         width: 100%;            
     } 
-
     &__element {
         display: flex;
         justify-content: space-between; 
@@ -104,11 +103,10 @@
         width: 23px;
         height: 23px;
     }
-
     &__btn-block {
         text-align: center;
-
     }
-
-     
+    &__btn-block a {
+        margin-right: 16px;
+    }
 }

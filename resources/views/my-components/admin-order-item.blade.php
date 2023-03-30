@@ -7,9 +7,9 @@
     <td class="app-table__price">{{ $order->calculateFullSum() }}</td>
     <td class="app-table__actions">
         @if(Auth::user()->isAdmin())
-            <a href="{{ route('orders.show', $order) }}" class="app-btn btn-green">Открыть</a> 
+            <a href="{{ route('orders.show', $order) }}" class="app-btn btn-success">Открыть</a> 
         @else
-            <a href="{{ route('person-orders.show', $order) }}" class="app-btn btn-green">Открыть</a> 
+            <a href="{{ route('person-orders.show', $order) }}" class="app-btn btn-success">Открыть</a> 
         @endif   
     </td>
 

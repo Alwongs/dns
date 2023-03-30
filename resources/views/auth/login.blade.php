@@ -26,11 +26,14 @@
             <div class="app-form__btn-block">
                 @if (Route::has('password.request'))
                     <a class="" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        Забыли пароль?
                     </a>
                 @endif
 
-                <x-green-button>Войти</x-green-button>
+                <x-btn-success>
+                    Войти
+                </x-btn-success>
+
             </div>
         </div>
     </form>

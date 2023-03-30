@@ -38,7 +38,8 @@
 
 
             <div class="app-form__btn-block">
-                <button type="submit" class="app-btn btn-green">Сохранить</button>
+                {{-- <button type="submit" class="app-btn btn-success">Сохранить</button> --}}
+                <x-btn-success> Сохранить </x-btn-success>
             </div>
         </form> 
     </div>

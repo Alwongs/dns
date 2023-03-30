@@ -8,10 +8,17 @@
     
     <p class="app-page__description"> {{ $category->description }} </p>
 
-    <ul class="product-list">
-        @foreach($category->products as $product)
-            @include('my-components.product-card')
-        @endforeach 
-    </ul>
+    <div class="proucts-page__container">
+        @include('my-components.product-filters')    
+
+        <ul class="product-list">
+            @foreach($products as $product)
+                @include('my-components.product-card')
+            @endforeach 
+        </ul>
+
+        {{-- {{ $category->products->links('pagination.default') }}         --}}
+        {{ $products->links('pagination.default') }}
+    </div>
 
 @endsection

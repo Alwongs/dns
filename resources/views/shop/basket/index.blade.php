@@ -27,7 +27,7 @@
     </table>
 
     <div class="btn-group flex-end">
-        <a href="{{ route('basket-place') }}" class="app-btn btn-green">Оформить заказ</a>
+        <a href="{{ route('basket-place') }}" class="app-btn btn-primary">Оформить заказ</a>
     </div>
 
 @endsection

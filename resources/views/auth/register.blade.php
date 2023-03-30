@@ -47,11 +47,13 @@
             </div>
 
             <div class="app-form__btn-block">
-                <a class="" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                <a href="{{ route('login') }}">
+                    Уже есть аккаунт?
                 </a>
 
-                <x-green-button>Создать</x-green-button>
+                <x-btn-success>
+                    Сохранить
+                </x-btn-success>
             </div>
         </div>
     </form>

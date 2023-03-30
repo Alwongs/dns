@@ -9,11 +9,9 @@
         </p>
     </header>
 
-    <x-danger-button
-        x-data=""
-        x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
-        class="app-btn btn-red mb-32"
-    >Удалить аккаунт</x-danger-button>
+    <x-btn-danger x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')">
+        Удалить аккаунт
+    </x-btn-danger>
 
     <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
         <form method="post" action="{{ route('profile.destroy') }}" class="app-form">
@@ -29,26 +27,24 @@
             </p>
 
         <div class="app-form__element">
-                <x-input-label for="password" value="Пароль:" />
-
-                <x-text-input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Пароль"
-                />
-
-                <x-input-error :messages="$errors->userDeletion->get('password')"  />
-            </div>
+            <x-input-label for="password" value="Пароль:" />
+            <x-text-input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Пароль"
+            />
+            <x-input-error :messages="$errors->userDeletion->get('password')"  />
+        </div>
 
         <div class="app-form__btn-block">
-                <x-secondary-button x-on:click="$dispatch('close')" class="app-btn btn-default">
-                    {{ __('Cancel') }}
-                </x-secondary-button>
+                <x-btn-default x-on:click="$dispatch('close')">
+                    Отмена
+                </x-btn-default>
 
-                <x-danger-button class="app-btn btn-red">
-                    {{ __('Delete Account') }}
-                </x-danger-button>
+                <x-btn-danger> 
+                    Удалить аккаунт
+                </x-btn-danger>
             </div>
         </form>
     </x-modal>

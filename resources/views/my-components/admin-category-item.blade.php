@@ -5,11 +5,11 @@
     <td class="app-table__phone">{{ $category->name }}</td>
     <td class="app-table__actions">
         <form action="{{ route('categories.destroy', $category) }}" method="POST">    
-            <a href="{{ route('categories.show', $category) }}" class="app-btn btn-green">Открыть</a>    
-            <a href="{{ route('categories.edit', $category) }}" class="app-btn btn-warn">Редактировать</a> 
+            <a href="{{ route('categories.show', $category) }}" class="app-btn btn-success">Открыть</a>    
+            <a href="{{ route('categories.edit', $category) }}" class="app-btn btn-warning">Редактировать</a> 
             @csrf
             @method('DELETE')
-            <input type="submit" class="app-btn btn-red" value="Удалить">
+            <input type="submit" class="app-btn btn-danger" value="Удалить">
         </form>    
     </td>
 
