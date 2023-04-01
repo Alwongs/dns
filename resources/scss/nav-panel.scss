@@ -57,6 +57,57 @@
             display: none;       
         }         
     }
+    &__right {
+        height: 100%;
+    }
 }
 
+.user-panel {
+    line-height: 48px;    
 
+    &__user-name {
+        position: relative;
+        background-image:  url('../images/icons/arrow-down.svg');  
+        background-repeat: no-repeat;
+        background-position: (100% 57%);
+        background-size: 18%;
+        padding-right: 18px;
+        color: $white;
+        cursor: pointer;
+    }
+
+    &__form {
+        background-color: $commonBg;
+        border-radius: 4px;
+        padding: 4px 0;
+        position: absolute;
+        right: -240px;
+        top: 60px;
+        transition: 0.5s;
+        width: 240px;
+        &.user-menu-active {
+            right: -10px;
+        }
+    }
+
+    &__form ul {
+        flex-direction: column;
+    }
+
+    &__form ul li {
+        height: 42px;
+        width: 100%;
+        line-height: 42px;
+        padding: 0 16px;
+        border-bottom: 1px solid lighten($commonBg, 6);
+    }
+
+    &__form ul li:hover {
+        transition: 0.5s;
+        background-color: lighten($commonBg, 8);
+    }
+   
+    // &__form ul li a {
+    //     display: block;
+    // }    
+}

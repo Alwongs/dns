@@ -6,7 +6,7 @@
         Авторизация
     </h1>
 
-    <form method="POST" action="{{ route('login') }}" class="app-form short-width">
+    <form method="POST" action="{{ route('login') }}" class="app-form container container__width-55">
         @csrf
             <x-my-input-element 
                 :type="'email'" :label="'Email'" :name="'email'" :value="old('email')" 

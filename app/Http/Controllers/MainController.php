@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 class MainController extends Controller
 {
     public function index() {
-        return view('welcome');
+        return view('home');
     }
 
     public function categories() {
@@ -36,7 +36,7 @@ class MainController extends Controller
                 $productQuery->$field();
             }
         }
-        $products = $productQuery->paginate(2)->withPath('?' . $request->getQueryString());
+        $products = $productQuery->paginate(3)->withPath('?' . $request->getQueryString());
 
         return view('shop.category.show', compact('category', 'products'));
     }
@@ -61,7 +61,7 @@ class MainController extends Controller
                 $productQuery->$field();
             }
         }
-        $products = $productQuery->paginate(3)->withPath('?' . $request->getQueryString());
+        $products = $productQuery->paginate(5)->withPath('?' . $request->getQueryString());
         return view('shop.product.index', compact('products'));
     }    
 }

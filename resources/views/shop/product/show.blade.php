@@ -6,7 +6,7 @@
         {{ $product->name }}
     </h1>
 
-    <main class="product-page">
+    <main class="product-page container container__width-70">
         <p class="product-page__category">
             ( {{ $product->category->name }} )
         </p>

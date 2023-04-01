@@ -1,0 +1,47 @@
+.container {
+    margin: 0 auto 64px;
+    @media (min-width: $desktop-min) and (max-width: $desktop-max) {       
+    }     
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {        
+    }      
+    @media (max-width: $mobile-max) {  
+        min-width: 100%;            
+    }     
+
+    &__width-55 {
+        width: 550px;        
+    }       
+    &__width-60 {
+        width: 600px;        
+    }       
+    &__width-65 {
+        width: 650px;        
+    }       
+    &__width-70 {
+        width: 700px;        
+    }       
+    &__width-75 {
+        width: 750px;        
+    }       
+    &__width-80 {
+        width: 800px;
+    }    
+    &__width-85 {
+        width: 850px;
+    }    
+    &__width-90 {
+        width: 900px;
+    }    
+    &__width-95 {
+        width: 950px;
+    }    
+    &__width-100 {
+        width: 1000px;
+    }    
+    &__width-110 {
+        width: 1100px;
+    }    
+    &__width-120 {
+        width: 1200px;
+    }    
+}

@@ -4,7 +4,7 @@
 
     <h1 class="app-page__title">Все товары</h1>
 
-    <div class="proucts-page__container">
+    <div class="container container__width-90">
         @include('my-components.product-filters')
 
         <ul class="product-list">

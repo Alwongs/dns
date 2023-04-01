@@ -9,28 +9,23 @@
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-{{-- 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"> --}}
 
-        <!-- Scripts -->
         @vite(['resources/scss/app.scss', 'resources/css/app.css', 'resources/js/app.js'])        
     </head>
     <body>
+    
         @include('my-components.nav-panel')
 
-        <div class="container">
+        <div class="app-page">
+            @if(session()->has('success'))
+                <div class="alert alert__success">{{ session()->get('success') }}</div>
+            @endif
+            @if(session()->has('warning'))
+                <div class="alert alert__warning">{{ session()->get('warning') }}</div>
+            @endif
 
-            <div class="app-page">
-                @if(session()->has('success'))
-                    <div class="alert alert__success">{{ session()->get('success') }}</div>
-                @endif
-                @if(session()->has('warning'))
-                    <div class="alert alert__warning">{{ session()->get('warning') }}</div>
-                @endif
-
-                @yield('content')
-            </div>
-
+            @yield('content')
         </div>
+
     </body>
 </html>

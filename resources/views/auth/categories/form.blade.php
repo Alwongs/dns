@@ -8,7 +8,7 @@
         <h1 class="app-page__title">Добавить категорию</h1>
     @endisset
 
-    <div class="app-page__form-container">
+    <div class="container container__width-70">
         <form method="POST" class="app-form" enctype="multipart/form-data"
             @isset($category) 
                 action="{{ route('categories.update', $category)  }}"

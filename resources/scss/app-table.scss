@@ -1,9 +1,9 @@
 .app-table {
+    border-collapse: collapse;
+    width: 100%;
     tr td:first-child {
         padding-left: 8px;       
-    }
-    width: 100%;
-    border-collapse: collapse;
+    }    
     thead tr {
         border-bottom: 1px solid $grey; 
         font-weight: 700;       

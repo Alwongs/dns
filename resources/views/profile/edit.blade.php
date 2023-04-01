@@ -4,7 +4,7 @@
         Личный кабинет
     </h1>
 
-    <div>
+    <div class="profile-page container container__width-65">
 
         @include('profile.partials.update-profile-information-form')
 
@@ -15,6 +15,8 @@
             <hr class="profile-page__devider">
 
         @include('profile.partials.delete-user-form')
+
+            <hr class="profile-page__devider">
 
     </div>
 
