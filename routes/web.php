@@ -20,7 +20,10 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('reset', [ResetController::class, 'reset'])->name('reset');
+
+
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::group([ 
@@ -35,9 +38,15 @@ Route::middleware(['auth'])->group(function () {
         Route::group(['middleware' => 'is_admin'], function() {
             Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders');
             Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
+
+            Route::get('clear-config', [ResetController::class, 'clearConfig'])->name('clear-config');
+            Route::get('clear-route', [ResetController::class, 'clearRoute'])->name('clear-route');
+            Route::get('clear-view', [ResetController::class, 'clearView'])->name('clear-view');
+            Route::get('reset', [ResetController::class, 'reset'])->name('reset');
         });
         Route::resource('categories', CategoryController::class);
         Route::resource('products', ProductController::class);
+
     });
 });
 

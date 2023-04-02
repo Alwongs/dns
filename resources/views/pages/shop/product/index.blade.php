@@ -5,15 +5,15 @@
     <h1 class="app-page__title">Все товары</h1>
 
     <div class="container container__width-90">
-        @include('my-components.product-filters')
+        @include('my-components.shop.product.filters')
 
         <ul class="product-list">
             @foreach($products as $product)
-                @include('my-components.product-card')
+                @include('my-components.shop.product.card')
             @endforeach  
         </ul>  
 
-        {{ $products->links('pagination.default') }}
+        {{ $products->links('my-components.pagination.default') }}
     </div>
     
 @endsection

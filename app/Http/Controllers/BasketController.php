@@ -17,7 +17,7 @@ class BasketController extends Controller
         } else {
             $order = null;
         }
-        return view('shop.basket.index', compact('order'));
+        return view('pages.shop.basket.index', compact('order'));
     }
 
     
@@ -27,7 +27,7 @@ class BasketController extends Controller
             return redirect()->route('products');
         }
         $order = Order::find($orderId);
-        return view('shop.basket.order', compact('order'));
+        return view('pages.shop.basket.order', compact('order'));
     }
 
 
@@ -92,7 +92,7 @@ class BasketController extends Controller
     public function basketRemove($productId) {
         $orderId = session('orderId');
         if (is_null($orderId)) {
-            return view('shop.basket.index', compact('order'));
+            return view('pages.shop.basket.index', compact('order'));
         }
         $order = Order::find($orderId);    
         

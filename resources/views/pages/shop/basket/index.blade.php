@@ -18,7 +18,7 @@
             </thead>
             <tbody>
                 @foreach($order->products()->with('category')->get() as $product)
-                    @include('my-components.product-item')
+                    @include('my-components.shop.product.item')
                 @endforeach
                 <tr class="app-table__sum">
                     <td class="app-table__name" colspan="3">Общая стоимость: </td>

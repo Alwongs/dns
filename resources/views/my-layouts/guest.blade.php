@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/scss/app.scss', 'resources/js/app.js'])
     </head>
     <body>
-        @include('my-components.admin-nav-panel')    
+        @include('my-components.admin.nav-panel.main')    
 
         <div class="app-page"> 
 

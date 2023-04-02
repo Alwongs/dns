@@ -19,7 +19,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate(4);
-        return view('auth.products.index', compact('products'));
+        return view('pages.auth.products.index', compact('products'));
     }
 
     /**
@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('auth.products.form', compact('categories'));
+        return view('pages.auth.products.form', compact('categories'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('auth.products.show', compact('product'));
+        return view('pages.auth.products.show', compact('product'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::get();
-        return view('auth.products.form', compact('categories', 'product'));
+        return view('pages.auth.products.form', compact('categories', 'product'));
     }
 
     /**
@@ -111,6 +111,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        // При мягком удалении не удалять файл из Storage!
         // if ($product->image) {
         //     Storage::delete($product->image);
         // }

@@ -10,15 +10,15 @@
         <p class="app-page__description"> {{ $category->description }} </p>
 
 
-            @include('my-components.product-filters')    
+            @include('my-components.shop.product.filters')    
 
             <ul class="product-list">
                 @foreach($products as $product)
-                    @include('my-components.product-card')
+                    @include('my-components.shop.product.card')
                 @endforeach 
             </ul>
 
-            {{ $products->links('pagination.default') }}
+            {{ $products->links('my-components.pagination.default') }}
         </div>
     </div>
 

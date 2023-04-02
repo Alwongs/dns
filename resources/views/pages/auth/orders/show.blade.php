@@ -22,7 +22,7 @@
             </thead>
             <tbody>
                 @foreach($products as $product)
-                    @include('my-components.admin-order-products-item')
+                    @include('my-components.admin.order.product-item')
                 @endforeach
                 <tr class="app-table__item">
                     <td colspan="3" class="app-table__actions">Общая стоимость</td>

@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Log;
 class MainController extends Controller
 {
     public function index() {
-        return view('home');
+        return view('pages.home');
     }
 
     public function categories() {
         $categories = Category::get();
-        return view('shop.category.index', compact('categories'));
+        return view('pages.shop.category.index', compact('categories'));
     }
 
     public function category(ProductsFilterRequest $request, $code) {
@@ -38,12 +38,12 @@ class MainController extends Controller
         }
         $products = $productQuery->paginate(3)->withPath('?' . $request->getQueryString());
 
-        return view('shop.category.show', compact('category', 'products'));
+        return view('pages.shop.category.show', compact('category', 'products'));
     }
     
     public function product($category, $productCode) {
         $product = Product::withTrashed()->byCode($productCode)->first();
-        return view('shop.product.show', compact('product'));
+        return view('pages.shop.product.show', compact('product'));
     }
 
     public function products(ProductsFilterRequest $request) {
@@ -62,6 +62,6 @@ class MainController extends Controller
             }
         }
         $products = $productQuery->paginate(5)->withPath('?' . $request->getQueryString());
-        return view('shop.product.index', compact('products'));
+        return view('pages.shop.product.index', compact('products'));
     }    
 }

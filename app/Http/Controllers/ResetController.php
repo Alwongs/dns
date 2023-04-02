@@ -25,4 +25,22 @@ class ResetController extends Controller
         session()->flash('success', 'Проект был сброшен в начальное состояние');
         return redirect()->route('welcome');
     }
+
+    public function clearConfig() {
+        Artisan::call('config:clear'); 
+        session()->flash('success', 'Config has been successfully cleaned');
+        return redirect()->route('welcome');               
+    }
+
+    public function clearRoute() {
+        Artisan::call('route:clear');   
+        session()->flash('success', 'Route has been successfully cleaned');
+        return redirect()->route('welcome');             
+    }
+
+    public function clearView() {
+        Artisan::call('view:clear');   
+        session()->flash('success', 'View has been successfully cleaned');
+        return redirect()->route('welcome');        
+    }
 }

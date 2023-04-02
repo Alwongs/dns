@@ -14,7 +14,7 @@
     </head>
     <body>
     
-        @include('my-components.nav-panel')
+        @include('my-components.shop.nav-panel.main')
 
         <div class="app-page">
             @if(session()->has('success'))

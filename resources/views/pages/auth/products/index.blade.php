@@ -23,7 +23,7 @@
 
                 @if($products)
                     @foreach($products as $product)
-                        @include('my-components.admin-product-item')
+                        @include('my-components.admin.product.item')
                     @endforeach
                 @else
                     <tr class="app-table__item" style="text-align:center;">
@@ -33,7 +33,7 @@
             </tbody>
         </table>
 
-        {{ $products->links('pagination.default') }}
+        {{ $products->links('my-components.pagination.default') }}
 
         <div class="btn-group">
             <a href="{{ route('products.create') }}" class="app-btn btn-success">Добавить продукт</a>

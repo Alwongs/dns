@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::get();
-        return view('auth.categories.index', compact('categories'));
+        return view('pages.auth.categories.index', compact('categories'));
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('auth.categories.form');
+        return view('pages.auth.categories.form');
     }
 
     /**
@@ -58,7 +58,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('auth.categories.show', compact('category'));
+        return view('pages.auth.categories.show', compact('category'));
     }
 
     /**
@@ -69,7 +69,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('auth.categories.form', compact('category'));
+        return view('pages.auth.categories.form', compact('category'));
     }
 
     /**
