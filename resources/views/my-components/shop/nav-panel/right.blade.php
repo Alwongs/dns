@@ -19,9 +19,9 @@
                     <li><a href="{{ route('orders') }}"> Админ панель </a></li>
                     <li><a href="{{ route('reset') }}"> Сброс-БД </a></li>
 
-                    <li><a href="{{ url('/clear-config') }}"> Clear config </a></li>                   
-                    <li><a href="{{ url('/clear-route') }}"> Clear route </a></li>                   
-                    <li><a href="{{ url('/clear-view') }}"> Clear view </a></li>   
+                    <li><a href="{{ route('clear-config') }}"> Clear config </a></li>                   
+                    <li><a href="{{ route('clear-route') }}"> Clear route </a></li>                   
+                    <li><a href="{{ route('clear-view') }}"> Clear view </a></li>   
                 @else
                     <li><a href="{{ route('person-orders.index') }}"> Мои заказы </a></li> 
                 @endadmin

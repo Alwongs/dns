@@ -16,9 +16,9 @@
                 <li><a href="{{ url('/profile') }}"> Настроить аккаунт </a></li>
                 <li><a :href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Выйти</a></li>
 
-                <li><a href="{{ url('/clear-config') }}"> Clear config </a></li>                   
-                <li><a href="{{ url('/clear-route') }}"> Clear route </a></li>                   
-                <li><a href="{{ url('/clear-view') }}"> Clear view </a></li>     
+                    <li><a href="{{ route('clear-config') }}"> Clear config </a></li>                   
+                    <li><a href="{{ route('clear-route') }}"> Clear route </a></li>                   
+                    <li><a href="{{ route('clear-view') }}"> Clear view </a></li>      
                 <li><a href="{{ route('reset') }}"> Сброс-БД </a></li>               
             </ul>
 
