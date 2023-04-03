@@ -40,19 +40,45 @@ class ProductTableSeeder extends Seeder
                 'recommend' => 0,  
                 'category_id' => 1, 
             ],
-
             [
                 'name' => 'IL-96', 
                 'code' => 'il-96', 
                 'description' => 'Отечественный пассажирский широкофезюляжный самолет', 
                 'price' => 120000000, 
                 'count' => 4,
-                'image' => 'products/il-96',
+                'image' => 'products/il-96.jpg',
                 'new' => 0,
                 'hit' => 0,   
                 'recommend' => 1,  
                 'category_id' => 1, 
             ],
+            [
+                'name' => 'Boeing-787', 
+                'code' => 'b-787', 
+                'description' => 'Пассажирский широкофезюляжный самолет с двумя мощными двигателями', 
+                'price' => 290000000, 
+                'count' => 4,
+                'image' => 'products/b-787.jpg',
+                'new' => 0,
+                'hit' => 0,   
+                'recommend' => 1,  
+                'category_id' => 1, 
+            ],
+            [
+                'name' => 'Airbus A-320', 
+                'code' => 'a-320', 
+                'description' => 'Пассажирский самолет для среднийх дистанций', 
+                'price' => 94000000, 
+                'count' => 4,
+                'image' => 'products/a-320.jpg',
+                'new' => 0,
+                'hit' => 0,   
+                'recommend' => 1,  
+                'category_id' => 1, 
+            ],
+
+
+
 
             [
                 'name' => 'Boeing-747-F', 
