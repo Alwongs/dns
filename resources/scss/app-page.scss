@@ -1,4 +1,4 @@
-.app-page {
+.app-page {   
     padding: 0 128px;
     @media (min-width: $desktop-min) and (max-width: $desktop-max) {
         padding: 0 64px;       
@@ -13,6 +13,9 @@
         text-align: center; 
         padding: 0;  
         margin-bottom: 32px;
+        @media (max-width: $mobile-max) {  
+            margin-bottom: 8px;          
+        }          
     }
     &__subtitle {
         text-align: center; 
@@ -23,4 +26,7 @@
         text-align: center;  
         margin-bottom: 16px;               
     }
+}
+.main-menu-btn {
+    color: $white;
 }

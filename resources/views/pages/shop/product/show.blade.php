@@ -21,8 +21,12 @@
         <p class="product-page__description">
             {{ $product->description }}
         </p>  
+
         @if($product->isAvailable())
-            <a href="{{ route('basket-add', $product) }}" class="app-btn btn-success">В корзину</a> 
+            <form action="{{ route('basket-add', $product) }}" method="POST">
+            @csrf
+                <button type="submit" class="app-btn btn-success">В корзину</button>
+            </form> 
         @else       
             <x-btn-disabled>Не доступен</x-btn-disabled>        
         @endif         

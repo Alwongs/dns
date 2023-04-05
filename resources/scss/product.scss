@@ -35,22 +35,25 @@
         flex-direction: column;  
         align-items: center;         
     }     
-    li {
-        font-size: 22px;
-        text-align: center;
-        color: $commonText;
-        font-weight: 400;
-        margin: 24px;
-        border-radius: 5px;
-    }
+
 }
 
-.product-card {
+.product-card { 
     position: relative;
     border: 1px solid $lightGrey;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    color: $commonText;   
     height: 320px;
     width: 250px;
+    margin: 24px;
     padding: 8px;
+    @media (max-width: $mobile-max) {  
+        width: 100%;  
+        margin: 16px 0;      
+    }     
     &__image {
         width: 140px;
         height: 140px;

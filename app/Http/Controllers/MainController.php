@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Log;
 class MainController extends Controller
 {
     public function index() {
-        return view('pages.home');
+        $categories = Category::get();
+        return view('pages.home', compact('categories'));
     }
 
     public function categories() {

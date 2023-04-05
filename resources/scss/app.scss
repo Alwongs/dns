@@ -2,8 +2,9 @@
 @import 'normalize';
 @import 'common';
 @import 'container';
-@import 'nav-panel';
-@import 'admin-nav-panel';
+@import 'nav/nav-panel';
+@import 'nav/navigation';
+@import 'nav/user-panel';
 @import 'admin-layout';
 @import 'pages/home.scss';
 @import 'pages/profile.scss';
@@ -16,3 +17,6 @@
 @import 'product';
 @import 'order';
 @import 'pagination';
+
+
+

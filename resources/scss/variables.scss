@@ -7,7 +7,8 @@ $mobile-max: 767px;
 
 /* ---- colors ---- */
 $commonBg: #4d7489;
-$commonText: rgb(39, 71, 119);
+$adminBg: lighten($commonBg, 48);
+$commonText: #274777;
 
 $black: black;
 $white: white;

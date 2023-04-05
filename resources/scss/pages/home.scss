@@ -4,5 +4,30 @@
     }
     img {
         width: 100%;
-    }    
+        border: 2px solid $commonBg;
+    }  
+    &__category-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 22px;
+        color: $commonText;
+        margin-bottom: 16px;
+        @media (max-width: $mobile-max) { 
+            flex-direction: column;
+        }         
+    }      
+    &__category-list li {
+        margin: 8px 32px;
+        border: 1px solid $commonText;
+        border-radius: 12px;
+        padding: 4px 12px;
+        &:hover {
+            background-color: $commonBg;
+            color: $white;
+        }
+    }      
+    &__category-list li a {
+        color: inherit;
+    }      
 }

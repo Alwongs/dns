@@ -1,4 +1,5 @@
-<nav class="nav-admin-panel">
+<nav class="nav-panel admin-version">
+    <div id="menuBtn" class="nav-panel__menu-btn admin-version"></div>
 
     @include('my-components.admin.nav-panel.left')    
 

@@ -43,4 +43,10 @@ class ResetController extends Controller
         session()->flash('success', 'View has been successfully cleaned');
         return redirect()->route('welcome');        
     }
+
+    public function makeSimLink() {
+        Artisan::call('storage:link');   
+        session()->flash('success', 'The link is successfully made');
+        return redirect()->route('welcome');        
+    }
 }

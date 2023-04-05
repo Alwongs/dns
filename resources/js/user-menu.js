@@ -1,21 +1,20 @@
 const userMenu = document.getElementById('userMenuForm');
-const menuBtn = document.getElementById('userMenuBtn');
-const userMenuCloseBtn = document.getElementById('userMenuCloseBtn');
-let isMenuOpen = false;
+const userMenuBtn = document.getElementById('userMenuBtn');
+let isUserMenuOpen = false;
 
 function openUserMenu() {
     userMenu.classList.add('user-menu-active');
-    isMenuOpen = true;
+    isUserMenuOpen = true;
 }
 function closeUserMenu() {
     userMenu.classList.remove('user-menu-active');
-    isMenuOpen = false;
+    isUserMenuOpen = false;
 }
 
-menuBtn.addEventListener('click', function () {
-    isMenuOpen ? closeUserMenu() : openUserMenu();
-})
+if (userMenuBtn) {
+    userMenuBtn.addEventListener('click', function () {
+         if (isUserMenuOpen) closeUserMenu(); else openUserMenu();
+    });
+}
 
-userMenuCloseBtn.addEventListener('click', function () {
-    isMenuOpen ? closeUserMenu() : openUserMenu();
-})
+if (userMenu) userMenu.addEventListener('click', closeUserMenu)

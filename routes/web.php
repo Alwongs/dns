@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders');
             Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
 
+            Route::get('make-sim-link', [ResetController::class, 'makeSimLink'])->name('make-sim-link');
             Route::get('clear-config', [ResetController::class, 'clearConfig'])->name('clear-config');
             Route::get('clear-route', [ResetController::class, 'clearRoute'])->name('clear-route');
             Route::get('clear-view', [ResetController::class, 'clearView'])->name('clear-view');

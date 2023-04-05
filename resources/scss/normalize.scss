@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    overflow-x: hidden;
+}
 body {
     font-family: 'Nunito', sans-serif;
     color: $commonText;
