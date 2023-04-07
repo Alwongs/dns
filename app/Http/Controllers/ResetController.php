@@ -49,4 +49,10 @@ class ResetController extends Controller
         session()->flash('success', 'The link is successfully made');
         return redirect()->route('welcome');        
     }
+
+    public function sessionFlush() {
+        session()->flush(); 
+        session()->flash('success', 'Session is successfully cleared');
+        return redirect()->route('welcome');        
+    }
 }

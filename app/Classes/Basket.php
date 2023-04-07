@@ -4,7 +4,9 @@ namespace App\Classes;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Mail\OrderCreated;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class Basket {
 
@@ -12,30 +14,19 @@ class Basket {
 
     public function __construct($createOrder = false) {
 
-        // session()->flush();
-
         $orderId = session('orderId'); 
-
-
 
         if (is_null($orderId) && $createOrder) {
 
             $data = [];
-
             if (Auth::check()) {
                 $data['user_id'] = Auth::id();
             }
-
             $this->order = Order::create($data);
-
-
-
             session(['orderId' => $this->order->id]);
         } else {
-
             $this->order = Order::findOrFail($orderId);
         }
-
     }
 
 
@@ -60,10 +51,12 @@ class Basket {
     }
 
 
-    public function saveOrder($name, $phone) {
+    public function saveOrder($name, $phone, $email) {
+
         if (!$this->countAvailable(true)) {
             return false;
         }
+        Mail::to($email)->send(new OrderCreated($name, $this->getOrder()));
         return $this->order->saveOrder($name, $phone);
     }
 

@@ -19,6 +19,7 @@
                 <li><a href="{{ route('clear-route') }}"> Clear route </a></li>                   
                 <li><a href="{{ route('clear-view') }}"> Clear view </a></li>   
                 <li><a href="{{ route('make-sim-link') }}"> Make sim link </a></li> 
+                <li><a href="{{ route('session-flush') }}"> session()->flush() </a></li> 
                 <li><a href="{{ route('reset') }}"> Сброс-БД </a></li>    
             @endadmin    
                 <li><a style="color:red;" :href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">Выйти</a></li>       

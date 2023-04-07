@@ -26,6 +26,15 @@
                 </div>
             </div>
 
+            @guest
+                <div class="app-form__element">
+                    <label for="phone">Email:</label>
+                    <div class="app-form__input-block">
+                        <input id="email" type="email" name="email">
+                    </div>
+                </div>
+            @endguest
+
             @csrf
                 <div class="app-form__btn-block">
                 <x-btn-success>Подтвердить</x-btn-success>

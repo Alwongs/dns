@@ -21,6 +21,7 @@
                     <li><a href="{{ route('clear-route') }}"> Clear route </a></li>                   
                     <li><a href="{{ route('clear-view') }}"> Clear view </a></li>   
                     <li><a href="{{ route('make-sim-link') }}"> Make sim link </a></li>  
+                    <li><a href="{{ route('session-flush') }}"> session()->flush() </a></li> 
                     <li><a href="{{ route('reset') }}"> Сброс-БД </a></li> 
                 @else
                     <li><a href="{{ route('person-orders.index') }}"> Мои заказы </a></li> 

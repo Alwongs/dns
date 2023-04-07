@@ -6,30 +6,33 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
 use App\Classes\Basket;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
 
     public function basket() {
 
-        $order = (new Basket())->getOrder();
 
+        $order = (new Basket())->getOrder();
         return view('pages.shop.basket.index', compact('order'));
     }
 
+
     public function basketConfirm(Request $request) {
 
-        if ((new Basket())->saveOrder($request->name, $request->phone)) {
+        $email = Auth::check() ? Auth::user()->email : $request->email;
+        if ((new Basket())->saveOrder($request->name, $request->phone, $email)) {
             session()->flash('success', 'Ваш заказ принят в обработку');
         } else {
             session()->flash('warning', 'Товар недоступен для заказа в полном объеме');            
         }
-
         Order::eraseOrderSum();
 
         return redirect()->route('products');
     }
     
+
     public function basketPlace() {
 
         $basket = new Basket();
@@ -43,10 +46,9 @@ class BasketController extends Controller
     }
 
     public function basketAdd(Product $product) {
-
+        // session()->flush();
+        // dd();
         $result = (new Basket(true))->addProduct($product);
-
-
 
         if ($result) {
             session()->flash('success', 'Добавлен товар ' . $product->name);            
