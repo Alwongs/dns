@@ -6,7 +6,7 @@
 
     <ul class="category-list container container__width-110">
         @foreach($categories as $category)
-            <li>
+            <li class="category-list__item">
                 <div class="category-list__item-image">
                     <img src="{{ Storage::url($category->image) }}" alt="image">
                 </div>

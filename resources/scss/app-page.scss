@@ -1,18 +1,18 @@
 .app-page {   
-    padding: 0 128px;
+    // padding: 0 128px;
     @media (min-width: $desktop-min) and (max-width: $desktop-max) {
-        padding: 0 64px;       
+      
     }     
     @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-        padding: 0 32px;         
+        
     }      
     @media (max-width: $mobile-max) {  
-        padding: 0 16px;            
+            
     }     
     &__title {
         text-align: center; 
         padding: 0;  
-        margin-bottom: 32px;
+        padding: 32px;
         @media (max-width: $mobile-max) {  
             margin-bottom: 8px;          
         }          

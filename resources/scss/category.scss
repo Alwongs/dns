@@ -2,17 +2,23 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;    
-    li {
+
+    li a {
+        color: $commonText;
+    }
+    &__item {
         font-size: 22px;
         margin: 32px;
         text-align: center;
         font-weight: 700;
     }
-    li a {
-        color: $commonText;
-    }
     &__item-image {
-        height: 140px;
+        border: 1px solid $commonText;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto 8px;
+        border-radius: 50%;
+        overflow: hidden;
     }
     &__item-image img {
         height: 100%;

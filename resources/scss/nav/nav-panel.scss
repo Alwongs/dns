@@ -1,4 +1,5 @@
 .nav-panel {
+
     background-color: $commonBg;
     height: 52px;
     display: flex;
@@ -7,7 +8,6 @@
     padding: 0 64px;
     box-shadow: 1px 1px 2px 1px rgba($black, 0.2);
     font-size: 18px;
-    margin-bottom: 32px;
     color: $white;    
     ul {
         display: flex; 
@@ -34,9 +34,7 @@
         padding: 0 32px;      
     }      
     @media (max-width: $mobile-max) {  
-        padding: 0 16px;  
-        margin-bottom: 8px;  
-        // flex-direction: column; 
+        padding: 0 16px;   
         height: 100%;           
     } 
 }
