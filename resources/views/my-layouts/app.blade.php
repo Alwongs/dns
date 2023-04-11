@@ -27,5 +27,6 @@
             @yield('content')
         </div>
 
+        @include('my-components.shop.footer.main')
     </body>
 </html>

@@ -1,42 +1,18 @@
 .home-page {
-    position: relative;
-    background-color: $commonBg;
+    background-image: url('../images/static/main.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+        background-color: $commonBg;         
+    }     
+    @media (max-width: $mobile-max) {  
+        background-color: $commonBg;           
+    } 
 
-    &__image-block {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        @media (max-width: $mobile-max) {  
-            position: static;
-            width: 100%;         
-        }         
-    }
-    &__image-block img {
-        width: 100%;
-        border: 2px solid $commonBg;
-    }  
-    &__main {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        border-radius: 10px;
-        @media (max-width: $mobile-max) {  
-            position: static;
-            width: 100%;         
-        }          
-    }
     &__title {
         text-align: center;
-        padding: 32px 0;
-        @media (max-width: $mobile-max) {  
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;         
-        }         
+        padding: 32px 16px;        
     }
     &__category-list {
         display: flex;
@@ -51,20 +27,22 @@
     }      
     &__category-list li {
         margin: 8px 32px;
-        border: 1px solid $commonText;
+        box-shadow: 1px 1px 1px 1px rgba($black, 0.4);
         background-color: #fff;
         border-radius: 12px;
-        padding: 4px 12px;
         &:hover {
             background-color: $commonBg;
             color: $white;
         }
         @media (max-width: $mobile-max) {  
             background-color: $white;
-            border: 1px solid transparent;            
+            border: 1px solid transparent;  
+            margin: 8px 16px;          
         }         
     }      
     &__category-list li a {
+        display: block;
+        padding: 4px 12px;
         color: inherit;
     }     
 }

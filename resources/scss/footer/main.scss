@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: lighten($commonBg, 12);
+    color: $white;
+    height: 52px;
+    align-items: center;
+    padding: 0 64px;
+}
+
+.footer {
+    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
+        padding: 0 32px;                 
+    }     
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
+        padding: 0 32px;      
+    }      
+    @media (max-width: $mobile-max) {  
+        padding: 0 16px;            
+    } 
+}

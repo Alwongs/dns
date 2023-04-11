@@ -1,9 +1,8 @@
 .nav-panel {
-
-    background-color: $commonBg;
-    height: 52px;
     display: flex;
     justify-content: space-between;
+    background-color: $commonBg;
+    height: 52px;
     align-items: center;
     padding: 0 64px;
     box-shadow: 1px 1px 2px 1px rgba($black, 0.2);
@@ -47,7 +46,8 @@
         background-repeat: no-repeat;  
         width: 32px;
         height: 32px;     
-        background-size: 100%; 
+        background-size: 100%;
+        margin-left: -5px;
         cursor: pointer;   
         &.admin-version {
             background-image:  url('../images/icons/menu-dark.svg');             
