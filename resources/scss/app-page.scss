@@ -1,14 +1,6 @@
 .app-page {   
-    // padding: 0 128px;
-    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
-      
-    }     
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {
-        
-    }      
-    @media (max-width: $mobile-max) {  
-            
-    }     
+    min-height: calc(100vh - 104px);
+    
     &__title {
         text-align: center; 
         padding: 0;  

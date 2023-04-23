@@ -3,7 +3,7 @@
     justify-content: space-between;
     background-color: lighten($commonBg, 12);
     color: $white;
-    height: 52px;
+    min-height: 52px;
     align-items: center;
     padding: 0 64px;
 }
